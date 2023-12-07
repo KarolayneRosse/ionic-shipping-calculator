@@ -1,20 +1,21 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+  <ion-segment mode="ios" [(ngModel)]="segmentValue">
+    <ion-segment-button value="shippCalculator">
+      <ion-label>Calcular Frete</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="registerCarrier">
+      <ion-label>Cadastrar Transportadora</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div [ngSwitch]="segmentValue">
+    <div *ngSwitchCase="'shippCalculator'">
+      <shipp-page></shipp-page>
+    </div>
+    <div *ngSwitchCase="'registerCarrier'">
+      <register-page></register-page>
+    </div>
   </div>
 </ion-content>
