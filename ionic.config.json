@@ -1,0 +1,7 @@
+{
+  "name": "ionic-shipping-calculator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
