@@ -1,3 +1,19 @@
-<div>
-  Página de cálculo de frete funciona!!!
+<div class="container">
+  <ion-row>
+    <ion-col>
+      <ion-input label="Peso" labelPlacement="stacked"
+        placeholder="Enter text"></ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-select label="Escolha uma ou mais transportadoras"
+      label-placement="floating" [multiple]="true">
+        <ion-select-option value="apple">Apple</ion-select-option>
+        <ion-select-option value="banana">Banana</ion-select-option>
+        <ion-select-option value="orange">Orange</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <div *ngIf="result">
+    <h3>Cálculo do frete</h3>
+  </div>
 </div>

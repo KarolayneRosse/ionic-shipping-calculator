@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { CarrierModalComponent } from './carrier-modal/carrier-modal.component';
 
 @Component({
   selector: 'register-page',
@@ -7,6 +9,15 @@ import { Component } from '@angular/core';
 })
 export class RegisterPage {
 
-  constructor() {}
+  constructor(
+    public modalController: ModalController
+  ) {}
 
+  async cadastrarTransportadoraModal(){
+    const modal = await this.modalController.create({
+      component: CarrierModalComponent,
+      cssClass: 'modal',
+      mode:'ios'
+    })
+  }
 }

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  segmentValue : string = 'shippCalculator'
+  segmentValue : string = 'registerCarrier'
 
   constructor() {}
 
